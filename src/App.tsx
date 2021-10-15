@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Playlists from './components/Playlists';
 import Footer from './components/Footer';
+import Page404 from './components/Page404';
 
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
           />
         )}/>
         <Route path="/playlists" component={Playlists}/>
-        <Route path="*" />
+        <Route path="*" component={Page404}/>
       </Switch>
       <Footer />
       <GlobalStyle />

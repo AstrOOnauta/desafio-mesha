@@ -23,7 +23,7 @@ export default function Home(props: any){
                 createdAt: new Date()   
             }
             
-            setSavePlaylist(...savePlaylist, [newPlayList])
+            setSavePlaylist([...savePlaylist, newPlayList])
             setHasSavedPlaylist(true)
         }
     }

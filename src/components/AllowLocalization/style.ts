@@ -6,7 +6,7 @@ export const MainAllowPage = styled.section`
     justify-content: center;
     align-items: center;
     max-width: 80%;
-    height: 70.4vh;
+    height: 73.5vh;
     margin: 1.5% auto;
 
     h3{
