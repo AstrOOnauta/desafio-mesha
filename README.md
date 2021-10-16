@@ -16,6 +16,8 @@ Project created to ReactJS Challenge - Challenge by Mesha Technology.
     - ReactJS
     - Typescript
     - Styles-Components
+    - React-icons lib
+    - React-Modal lib
     - Hooks
     - localStorage
     - Open Weather API
