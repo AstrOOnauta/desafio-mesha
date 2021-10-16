@@ -4,8 +4,8 @@ import axios from "axios"
 
 import { GlobalStyle } from './styles/global';
 import Header from './components/Header';
-import Home from './components/Home';
-import Playlists from './components/Playlists';
+import Home from './pages/Home';
+import Playlists from './pages/Playlists';
 import Footer from './components/Footer';
 import Page404 from './components/Page404';
 

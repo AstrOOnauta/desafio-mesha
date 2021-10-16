@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { MdLocalFireDepartment } from "react-icons/md"
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
-import AllowLocalization from "../AllowLocalization";
-import LoadingPage from "../LoadingPage"
+import AllowLocalization from "../../components/AllowLocalization";
+import LoadingPage from "../../components/LoadingPage"
 import { Loading, HomeContainer, WeatherContainerBody, WeatherContainerHeader, FewClouds, Clouds, ShowerRain, Rain, Thunderstorm, Snow, Mist, ClearSky, PlaylistTable, WeatherContainer, PlaylistContainer, PlaylistHeader } from "./style";
 
 export default function Home(props: any){
@@ -20,7 +20,10 @@ export default function Home(props: any){
                 tracks: props.playlist.Results.length,
                 temp: (props.weather.main.temp).toFixed(0),
                 city: props.weather.name,
-                createdAt: new Date()
+                createdAt: new Date(),
+                musics: {
+                    playlist: props.playlist
+                }
             }
             
             setSavePlaylist([...savePlaylist, newPlayList])

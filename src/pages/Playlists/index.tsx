@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react"
-import { FaTrash } from "react-icons/fa"
+import { FaPlusCircle, FaTrash } from "react-icons/fa"
 import { BsHourglassSplit } from "react-icons/bs"
 
 import { ContainerPlaylistsList, PlaylistsTable, NoPlaylistsTable } from "./style"
+import MusicsModal from "../../components/MusicsModal"
 
 export default function Playlists(){
     const [deletePlaylist, setDeletePlaylist] = useState(false)
     const [savedPlaylist, setSavedPlaylist]: any = useState([])
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [playlistIndex, setPlaylistIndex] = useState(0)
+
+    function handleModalOpen(index: number){
+        setPlaylistIndex(index)
+        setIsModalOpen(true)
+    }
+
+    function handleModalClose(){
+        setIsModalOpen(false)
+      }
 
     function removeTransition(index: number){
         setDeletePlaylist(true)
@@ -48,7 +60,6 @@ export default function Playlists(){
                             <tr>
                                 <th><small>Faixas</small></th>
                                 <th><small>Título</small></th>
-                                <th><small>Temperatura</small></th>
                                 <th><small>Cidade</small></th>
                                 <th><small>Data</small></th>
                                 <th><small>Ações</small></th>
@@ -60,19 +71,24 @@ export default function Playlists(){
                                     <tr key={index}>
                                         <td>{playlist.tracks}</td>
                                         <td>{playlist.name}</td>
-                                        <td>{playlist.temp}°C</td>
-                                        <td>{playlist.city}</td>
+                                        <td>{playlist.city} ({playlist.temp}°C)</td>
                                         <td>{new Intl.DateTimeFormat("pt-BR").format(new Date(playlist.createdAt))}</td>
                                         <td>
-                                            <button type="button" onClick={()=>removeTransition(index)}>
-                                                <FaTrash size={20}style={{color: "var(--yellow)"}} />  
-                                            </button>
+                                            <div>
+                                                <button type="button" onClick={()=>handleModalOpen(index)}>
+                                                    <FaPlusCircle size={21}style={{color: "var(--yellow)"}}/>
+                                                </button>
+                                                <button type="button" onClick={()=>removeTransition(index)}>
+                                                    <FaTrash size={20}style={{color: "var(--yellow)"}} />  
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 )
                             })}
                         </tbody>
                 </PlaylistsTable>
+                <MusicsModal isOpen={isModalOpen} onRequestClose={handleModalClose} playlist={savedPlaylist[playlistIndex]}/>
             </ContainerPlaylistsList>
         )
     }
