@@ -35,7 +35,7 @@ export default function Playlists(){
     if(savedPlaylist.length === 0) {
         return(
             <NoPlaylistsTable>
-                <BsHourglassSplit size={100}/>
+                <BsHourglassSplit size={100} style={{opacity: ".5"}}/>
                 <h2>Nenhuma playlist adicionada aos favoritos!</h2>
 
             </NoPlaylistsTable>

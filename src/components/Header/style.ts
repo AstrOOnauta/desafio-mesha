@@ -15,6 +15,9 @@ export const HeaderContainer = styled.header`
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 1080px){
+            width: 90%;;
+        }
         width: 80%;
         margin: auto;
 
@@ -23,7 +26,7 @@ export const HeaderContainer = styled.header`
             align-items: center;
 
             h2{
-                padding: 0 .5rem;
+                padding: 0 1rem 0 .5rem;
             }
         }
     }
@@ -33,12 +36,15 @@ export const HeaderContainer = styled.header`
 export const LinkRoute = styled(Link)`
     color: inherit;
     text-decoration: none;
-
-    padding: 0 .5rem;
+    text-align: center;
 
     transition: filter .2s;
 
     &:hover{
         filter: brightness(.8);
+    }
+
+    &:nth-child(2){
+        padding: 0 0 0 1rem;
     }
 `

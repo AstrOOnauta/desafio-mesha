@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import axios from "axios"
 
@@ -67,7 +67,6 @@ function App() {
     })
     .then((res: any)=>{
       setPlaylist(res.data)
-      console.log(res.data)
     })
   }
 

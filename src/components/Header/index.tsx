@@ -12,7 +12,7 @@ export default function Header(){
                     <h2>AstrOOnauta</h2>
                 </div>
                 <div>
-                    <LinkRoute to="/">Home</LinkRoute>
+                    <LinkRoute to="/">Início</LinkRoute>
                     <LinkRoute to="/playlists">Playlists</LinkRoute>
                 </div>
             </section>

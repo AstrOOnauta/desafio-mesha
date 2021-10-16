@@ -20,7 +20,7 @@ export default function Home(props: any){
                 tracks: props.playlist.Results.length,
                 temp: (props.weather.main.temp).toFixed(0),
                 city: props.weather.name,
-                createdAt: new Date()   
+                createdAt: new Date()
             }
             
             setSavePlaylist([...savePlaylist, newPlayList])

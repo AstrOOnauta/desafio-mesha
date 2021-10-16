@@ -14,6 +14,7 @@ export const PlaylistsTable = styled.table`
     width: 90%;
     margin: 0 auto;
     padding-top: 5rem;
+
     animation: ${show} .4s;
     thead{
         th{
@@ -77,9 +78,11 @@ export const NoPlaylistsTable = styled.div`
     width: 80%;
     height: 80vh;
     margin: 0 auto;
-    opacity: .5;
+
+    animation: ${show} .4s;
 
     h2{
         padding: 2rem 0;
+        opacity: .5;
     }
 `

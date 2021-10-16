@@ -33,15 +33,15 @@ export const HomeContainer = styled.main`
     section {
         display: grid;
         @media(min-width: 720px){
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.5fr;
             min-height: 40vh;
         }
         @media(min-width: 1120px){
-            grid-template-columns: 1fr 1fr;
             min-height: 80vh;
+            width: 80%;
         }
         gap: 2rem;
-        width: 80%;
+        width: 90%;
         min-height: 80vh;
         margin: auto;
         padding: 2rem 0;
@@ -53,7 +53,7 @@ export const WeatherContainer = styled.div`
     color: #fff;
     border-radius: .5rem;
     text-align: center;
-    height: 25rem;
+    height: 22rem;
 
     padding: 2rem;
 `
@@ -69,7 +69,7 @@ export const WeatherContainerBody = styled.div`
     flex-direction: column;
     align-items: center;
 
-    margin: 4rem 0;
+    margin: 2rem 0;
 
     small{
         padding: 2rem 0 0 0;
@@ -90,9 +90,10 @@ export const PlaylistHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    @media(min-width: 1000px){
+        padding: 0 1rem;
+    }
 
     button{
         background-color: transparent;
@@ -102,30 +103,43 @@ export const PlaylistHeader = styled.div`
 
 export const PlaylistTable = styled.table`
     border-spacing: 0 .5rem;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    @media(min-width: 1000px){
+        padding: 0 1rem;
+    }
+
     animation: ${show} .4s;
     tr{
-        border-radius: .5rem;
-
+        
         td{
-            padding: 1rem .2rem;
+            @media(min-width: 1000px){
+                padding: 2.5rem 0;
+            }
+            
             border: 0;
             background-color: #1d1d1d;
-            word-break: break-all;
     
             animation: ${show} .4s;
             &:nth-child(1){
                 width: 12%;
+                border-radius: .5rem 0 0 .5rem;
             }
             &:nth-child(2){
-                width: 12%;
+                @media(min-width: 1000px){
+                    width: 12%;
+                }
+                width: 18%;
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
             }
             &:nth-child(3){
-                width: 76%;
+                @media(min-width: 1000px){
+                    width: 76%;
+                }
+                width: 70%;
+                padding: 1rem;
+                border-radius: 0 .5rem .5rem 0;
 
                 small{
                     color: #a1a1a1;
